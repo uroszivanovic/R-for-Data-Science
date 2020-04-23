@@ -1,3 +1,4 @@
+#iteration trough rows (1) and columns (2):
 X <- matrix(rnorm(15), nrow = 5)
 X
 
@@ -29,6 +30,7 @@ x2 <- list(
   c(0.39, 0.01, 0.38, 0.87, 0.34)
 )
 
+#lapply() - list is output:
 x1 %>% lapply(threshold) %>% str()
 x2 %>% lapply(threshold) %>% str()
 
@@ -45,6 +47,7 @@ df <- tibble(
   X4 = c(TRUE, FALSE, TRUE)
 )
 
+#some type of data validation could be done by using vapply():
 vapply(df, is.numeric, logical(1)) #try using "map_lgl(df, is.numeric)", it's less typing!
 
 #exp. used with factors:
