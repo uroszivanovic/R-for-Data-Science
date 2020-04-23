@@ -1,0 +1,11 @@
+#Looping patterns:
+
+#iteration over the numeric indices (general form)
+for (i in seq_along(df)) {
+  name <- names(df)[[i]]
+  value <- df[[i]]
+}
+
+#loop over the names
+results <- vector("list", length(x))
+names(results) <- names(x)
