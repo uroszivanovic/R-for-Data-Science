@@ -1,18 +1,13 @@
 library(tidyverse)
 library(nycflights13)
 
-avg_dest_delays <-
-  flights %>%
-  group_by(dest) %>%
-  # arrival delay NA's are cancelled flights
-  summarise(delay = mean(arr_delay, na.rm = TRUE)) %>%
-  inner_join(airports, by = c(dest = "faa"))
-
-
-avg_dest_delays %>%
-  ggplot(aes(lon, lat, colour = delay)) +
+airports %>%
+  semi_join(flights, c("faa" = "dest")) %>%
+  ggplot(aes(lon, lat, colour = tzone)) +
   borders("state") +
   geom_point() +
-  coord_quickmap()
+  coord_quickmap()theme(legend.position = "none") +
+  theme(legend.position = "none")
 
-ggsave("relational-data/figs/avg_delay_by_dest.png")
+
+ggsave("relational-data/figs/quickmap.png")
