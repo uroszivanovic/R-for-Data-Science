@@ -31,7 +31,7 @@ map_lgl(diamonds, is.factor)
 
 #the main difference between general map and other map functions (where outputs are vectors):
 map(-2:2, rnorm, n = 5)
-map_dbl(-2:2, rnorm, n = 5)
+map_dbl(-2:2, rnorm, n = 5)# returning an error !!!
 
 #To return a double vector, we could use map() followed by flatten_dbl():
 flatten_dbl(map(-2:2, rnorm, n = 5))
