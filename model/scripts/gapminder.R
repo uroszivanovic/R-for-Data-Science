@@ -61,4 +61,3 @@ gapminder %>%
   geom_line()
 
 ggsave("model/figs/bad_fit.png")
-

@@ -17,4 +17,3 @@ ggplot(sim1, aes(x, resid)) +
   geom_point() 
 
 ggsave("model/figs/residuals2.png")
-

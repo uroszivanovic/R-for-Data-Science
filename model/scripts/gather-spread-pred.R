@@ -3,6 +3,7 @@ library(tidyverse)
 library(modelr)
 options(na.action = na.warn)
 
+sim1_loess <- loess(y ~ x, data = sim1)
 sim1_mod <- lm(y ~ x, data = sim1)
 grid <- sim1 %>%
   data_grid(x)
