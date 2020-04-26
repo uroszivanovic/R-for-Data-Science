@@ -69,4 +69,3 @@ df %>%
   mutate(
     smry = map2_chr(name, value, ~ stringr::str_c(.x, ": ", .y[1]))
   )
-

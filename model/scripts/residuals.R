@@ -3,6 +3,7 @@ library(tidyverse)
 library(modelr)
 options(na.action = na.warn)
 
+sim1_mod <- lm(y ~ x, data = sim1)
 sim1 <- sim1 %>% 
   add_residuals(sim1_mod)
 sim1

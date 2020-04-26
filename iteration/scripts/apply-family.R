@@ -1,3 +1,5 @@
+library(tidyverse)
+
 #iteration trough rows (1) and columns (2):
 X <- matrix(rnorm(15), nrow = 5)
 X
@@ -30,13 +32,14 @@ x2 <- list(
   c(0.39, 0.01, 0.38, 0.87, 0.34)
 )
 
+#lapply and sapply:
+threshold <- function(x, cutoff = 0.8) x[x > cutoff]
 #lapply() - list is output:
 x1 %>% lapply(threshold) %>% str()
 x2 %>% lapply(threshold) %>% str()
 
 #Base sapply() is a wrapper around lapply() that automatically simplifies the output, 
 #but it might be a problem with sort of output
-threshold <- function(x, cutoff = 0.8) x[x > cutoff]
 x1 %>% sapply(threshold) %>% str()
 x2 %>% sapply(threshold) %>% str()
 

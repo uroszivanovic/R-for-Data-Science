@@ -40,4 +40,3 @@ flights %>%
   labs(x = "Day of Week", y = "Average Distance")
 
 ggsave("model/figs/violin_wday_distance.png")
-

@@ -23,6 +23,3 @@ df %>% mutate(
   a = map_dbl(x, "a"),
   b = map_dbl(x, "b", .null = NA_real_)
 )
-
-
-
