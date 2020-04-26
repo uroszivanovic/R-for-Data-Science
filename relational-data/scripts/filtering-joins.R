@@ -8,7 +8,5 @@ airports %>%
   borders("state") +
   geom_point() +
   coord_quickmap()
-  theme(legend.position = "none")
-
 
 ggsave("relational-data/figs/quickmap.png")
