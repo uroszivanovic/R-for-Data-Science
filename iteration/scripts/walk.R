@@ -11,5 +11,3 @@ plots <- mtcars %>%
 paths <- stringr::str_c(names(plots), ".pdf")
 
 pwalk(list(paths, plots), ggsave, path = "iteration/figs")
-
-

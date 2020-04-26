@@ -19,4 +19,3 @@ rescale01 <- function(x) {
 for (i in seq_along(df)) {
   df[[i]] <- rescale01(df[[i]])
 }
-

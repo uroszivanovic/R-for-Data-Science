@@ -15,5 +15,3 @@ for (var in names(trans)) {
 
 trans[["disp"]] ## 'disp' is multiplied by 0.0163871
 trans[["am"]] ## 'am' is replaced by a factor variable.
-
-

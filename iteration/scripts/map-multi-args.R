@@ -22,6 +22,7 @@ map2(mu, sigma, rnorm, n = 5) %>% str()
   #out
 #}
 
+
 #pmap() - iterates over more than two vectors in parallel:
 n <- list(1, 3, 5)
 args1 <- list(n, mu, sigma)
