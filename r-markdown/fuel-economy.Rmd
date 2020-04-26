@@ -1,5 +1,5 @@
 ---
-title: "R-Markdown-Report"
+title: "fuel-economy"
 author: "Uros Zivanovic"
 date: "April 26, 2020"
 output: html_document
@@ -16,7 +16,7 @@ class <- mpg %>% filter(class == params$my_class)
 
 # Fuel economy for `r params$my_class`s
 
-```{r, message = FALSE}
+```{r, warning = FALSE, message = FALSE}
 ggplot(class, aes(displ, hwy)) + 
   geom_point() + 
   geom_smooth(se = FALSE)
