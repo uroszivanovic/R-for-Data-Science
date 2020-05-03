@@ -2,8 +2,7 @@
 title: "fuel-economy"
 author: "Uros Zivanovic"
 date: "April 26, 2020"
-output:
-  word_document: default
+output: github_document
 params:
   my_class: compact
 ---
