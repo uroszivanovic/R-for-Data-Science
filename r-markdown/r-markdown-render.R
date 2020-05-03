@@ -2,7 +2,7 @@ library(tidyverse)
 
 reports <- tibble(
   class = unique(mpg$class),
-  filename = stringr::str_c("fuel-economy-", class, ".html"),
+  filename = stringr::str_c("fuel-economy-", class, ".md"),
   params = purrr::map(class, ~ list(my_class = .))
 )
 reports
