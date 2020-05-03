@@ -2,9 +2,10 @@
 title: "fuel-economy"
 author: "Uros Zivanovic"
 date: "April 26, 2020"
-output: html_document
+output:
+  word_document: default
 params:
-  my_class: "compact"
+  my_class: compact
 ---
 
 ```{r setup, include = FALSE}
