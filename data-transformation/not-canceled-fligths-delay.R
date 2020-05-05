@@ -14,11 +14,7 @@ delays <- not_cancelled %>%
 ggplot(data = delays, mapping = aes(x = delay)) + 
   geom_freqpoly(binwidth = 10)
 
-ggsave("data-transformation/figs/geom_freqpoly.png")
-
 delays %>% 
   filter(n > 25) %>% 
   ggplot(mapping = aes(x = n, y = delay)) + 
   geom_point(alpha = 1/10)
-
-ggsave("data-transformation/figs/delays_plot.png")

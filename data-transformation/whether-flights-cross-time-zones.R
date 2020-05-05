@@ -15,5 +15,3 @@ nrow(filter(flights_airtime, air_time_diff != 0))
 
 ggplot(flights_airtime, aes(x = air_time_diff)) +
   geom_histogram(binwidth = 1)
-
-ggsave("data-transformation/figs/flights_hist.png")

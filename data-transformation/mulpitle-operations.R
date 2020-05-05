@@ -13,6 +13,3 @@ delays <- flights %>%
 ggplot(data = delays, mapping = aes(x = dist, y = delay)) +
   geom_point(aes(size = count), alpha = 1/3) +
   geom_smooth(se = FALSE)
-
-ggsave("data-transformation/figs/transform_pipe_plot.png")
-

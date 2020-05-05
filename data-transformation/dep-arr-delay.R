@@ -15,9 +15,5 @@ cancelled_and_delays <-
 ggplot(cancelled_and_delays) +
   geom_point(aes(x = avg_dep_delay, y = cancelled_prop))
 
-ggsave("data-transformation/figs/dep_delay_plot.png")
-
 ggplot(cancelled_and_delays) +
   geom_point(aes(x = avg_arr_delay, y = cancelled_prop))
-
-ggsave("data-transformation/figs/arr_delay_plot.png")
