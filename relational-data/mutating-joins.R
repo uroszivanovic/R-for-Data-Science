@@ -24,5 +24,3 @@ ggplot(plane_cohorts, aes(x = age, y = dep_delay_mean)) +
   geom_point() +
   scale_x_continuous("Age of plane (years)", breaks = seq(0, 30, by = 10)) +
   scale_y_continuous("Mean Departure Delay (minutes)")
-
-ggsave("relational-data/figs/delays_vs_age_of_plane.png")
