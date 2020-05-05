@@ -8,6 +8,6 @@ x %>%
 plots <- mtcars %>% 
   split(.$cyl) %>% 
   map(~ggplot(., aes(mpg, wt)) + geom_point())
-paths <- stringr::str_c(names(plots), ".pdf")
+paths <- stringr::str_c(names(plots), ".png")
 
 pwalk(list(paths, plots), ggsave, path = "iteration/figs")
