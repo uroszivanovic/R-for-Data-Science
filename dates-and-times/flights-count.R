@@ -20,5 +20,3 @@ flights_dt %>%
   filter(dep_time < ymd(20130102)) %>% 
   ggplot(aes(dep_time)) + 
   geom_freqpoly(binwidth = 600) # 600 s = 10 minutes
-
-ggsave("dates-and-times/figs/daily_departure.png")

@@ -10,6 +10,3 @@ relig_summary <- gss_cat %>%
 
 ggplot(relig_summary, aes(tvhours, relig)) +
   geom_point()
-
-ggsave("factors/figs/tvhours_by_relig.png")
-

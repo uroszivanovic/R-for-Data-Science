@@ -13,5 +13,3 @@ gss_cat %>%
   scale_x_discrete("Respondent's Income") +
   scale_fill_manual(values = c("FALSE" = "black", "TRUE" = "gray")) +
   theme(legend.position = "None")
-
-ggsave("factors/figs/income_barchart.png")

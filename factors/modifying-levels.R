@@ -14,5 +14,3 @@ gss_cat %>%
   geom_point() + 
   geom_line() +
   labs(colour = "Party ID.")
-
-ggsave("factors/figs/democrat_republican_prop.png")
