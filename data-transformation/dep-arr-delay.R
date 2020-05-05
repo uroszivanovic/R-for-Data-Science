@@ -1,6 +1,7 @@
-library("nycflights13")
-library("tidyverse")
+library(nycflights13)
+library(tidyverse)
 
+#canceled and flights with avg delay:
 cancelled_and_delays <-
   flights %>%
   mutate(cancelled = (is.na(arr_delay) | is.na(dep_delay))) %>%
@@ -9,8 +10,7 @@ cancelled_and_delays <-
     cancelled_prop = mean(cancelled),
     avg_dep_delay = mean(dep_delay, na.rm = TRUE),
     avg_arr_delay = mean(arr_delay, na.rm = TRUE)
-  ) %>%
-  ungroup()
+  )
 
 ggplot(cancelled_and_delays) +
   geom_point(aes(x = avg_dep_delay, y = cancelled_prop))

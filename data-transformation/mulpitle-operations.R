@@ -1,5 +1,5 @@
-library("nycflights13")
-library("tidyverse")
+library(nycflights13)
+library(tidyverse)
 
 delays <- flights %>% 
   group_by(dest) %>% 
