@@ -28,8 +28,6 @@ presidential %>%
     axis.ticks.y = element_blank()
   )
 
-ggsave("communicate/figs/scales.png")
-
 #2-legend:
 ggplot(mpg, aes(displ, hwy)) +
   geom_point(aes(colour = class)) +
@@ -37,19 +35,13 @@ ggplot(mpg, aes(displ, hwy)) +
   theme(legend.position = "bottom") +
   guides(colour = guide_legend(nrow = 1, override.aes = list(size = 4)))
 
-ggsave("communicate/figs/scales2.png")
-
 #3-showing exact, not the transformed values:
 ggplot(diamonds, aes(carat, price)) +
   geom_bin2d() + 
   scale_x_log10() + 
   scale_y_log10()
 
-ggsave("communicate/figs/scales3.png")
-
 #4-ColorBrewer scales:
 ggplot(mpg, aes(displ, hwy)) +
   geom_point(aes(color = drv, shape = drv)) +
   scale_colour_brewer(palette = "Set1")
-
-ggsave("communicate/figs/scales4.png")

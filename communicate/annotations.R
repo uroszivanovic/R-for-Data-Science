@@ -10,8 +10,6 @@ ggplot(mpg, aes(displ, hwy)) +
   geom_point(size = 3, shape = 1, data = best_in_class) +
   ggrepel::geom_label_repel(aes(label = model), data = best_in_class)
 
-ggsave("communicate/figs/annotations.png")
-
 #2
 class_avg <- mpg %>%
   group_by(class) %>%
@@ -19,7 +17,6 @@ class_avg <- mpg %>%
     displ = median(displ),
     hwy = median(hwy)
   )
-
 
 ggplot(mpg, aes(displ, hwy, colour = class)) +
   ggrepel::geom_label_repel(aes(label = class),
@@ -30,8 +27,6 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
   ) +
   geom_point() +
   theme(legend.position = "none")
-
-ggsave("communicate/figs/annotations2.png")
 
 #3
 label <- mpg %>%
@@ -44,8 +39,6 @@ label <- mpg %>%
 ggplot(mpg, aes(displ, hwy)) +
   geom_point() +
   geom_text(aes(label = label), data = label, vjust = "top", hjust = "right")
-
-ggsave("communicate/figs/annotations3.png")
 
 #4
 label2 <- tibble(
@@ -62,6 +55,3 @@ ggplot(mpg, aes(displ, hwy)) +
             size = 3
   ) +
   facet_wrap(~class)
-
-ggsave("communicate/figs/annotations4.png")
-

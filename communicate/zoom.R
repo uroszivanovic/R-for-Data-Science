@@ -5,8 +5,6 @@ ggplot(mpg, mapping = aes(displ, hwy)) +
   geom_smooth() +
   coord_cartesian(xlim = c(5, 7), ylim = c(10, 30))
 
-ggsave("communicate/figs/zoom.png")
-
 #to match scales across different plots:
 suv <- mpg %>% filter(class == "suv")
 compact <- mpg %>% filter(class == "compact")
@@ -21,13 +19,8 @@ ggplot(suv, aes(displ, hwy, colour = drv)) +
   y_scale +
   col_scale
 
-ggsave("communicate/figs/zoom2.png")
-
 ggplot(compact, aes(displ, hwy, colour = drv)) +
   geom_point() +
   x_scale +
   y_scale +
   col_scale
-
-ggsave("communicate/figs/zoom3.png")
- 

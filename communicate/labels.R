@@ -11,5 +11,3 @@ ggplot(mpg, aes(displ, hwy)) +
     y = "Highway fuel economy (mpg)",
     colour = "Car type"
   )
-
-ggsave("communicate/figs/labels.png")
