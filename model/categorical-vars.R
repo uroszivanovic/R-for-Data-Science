@@ -1,12 +1,9 @@
 library(tidyverse)
-
 library(modelr)
 options(na.action = na.warn)
 
 ggplot(sim2) + 
   geom_point(aes(x, y))
-
-ggsave("model/figs/categorical.png")
 
 mod2 <- lm(y ~ x, data = sim2)
 
@@ -18,5 +15,3 @@ grid
 ggplot(sim2, aes(x)) + 
   geom_point(aes(y = y)) +
   geom_point(data = grid, aes(y = pred), colour = "red", size = 4)
-
-ggsave("model/figs/categorical_mean.png")

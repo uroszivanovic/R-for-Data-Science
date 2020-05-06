@@ -1,5 +1,4 @@
 library(tidyverse)
-
 library(modelr)
 options(na.action = na.warn)
 
@@ -11,8 +10,6 @@ models <- tibble(
 ggplot(sim1, aes(x, y)) + 
   geom_abline(aes(intercept = a1, slope = a2), data = models, alpha = 1/4) +
   geom_point() 
-
-ggsave("model/figs/250_models.png")
 
 model1 <- function(a, data) {
   a[1] + data$x * a[2]
@@ -41,14 +38,10 @@ ggplot(sim1, aes(x, y)) +
     data = filter(models, rank(dist) <= 10)
   ) 
 
-ggsave("model/figs/10_best_models.png")
-
-#models as observations (a1 vs. a2):
+#models as observations (a1 vs a2):
 ggplot(models, aes(a1, a2)) +
   geom_point(data = filter(models, rank(dist) <= 10), size = 4, colour = "red") +
   geom_point(aes(colour = -dist))
-
-ggsave("model/figs/models_as_observations.png")
 
 grid <- expand.grid(
   a1 = seq(-5, 20, length = 25),
@@ -61,16 +54,12 @@ grid %>%
   geom_point(data = filter(grid, rank(dist) <= 10), size = 4, colour = "red") +
   geom_point(aes(colour = -dist)) 
 
-ggsave("model/figs/models_as_observations(grids).png")
-
 ggplot(sim1, aes(x, y)) + 
   geom_point(size = 2, colour = "grey30") + 
   geom_abline(
     aes(intercept = a1, slope = a2, colour = -dist), 
     data = filter(grid, rank(dist) <= 10)
   )
-
-ggsave("model/figs/10_best_models(grids).png")
 
 #Newton-Raphson:
 best <- optim(c(0, 0), measure_distance, data = sim1)

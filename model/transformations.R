@@ -1,5 +1,4 @@
 library(tidyverse)
-
 library(modelr)
 library(splines)
 options(na.action = na.warn)
@@ -11,8 +10,6 @@ sim5 <- tibble(
 
 ggplot(sim5, aes(x, y)) +
   geom_point()
-
-ggsave("model/figs/transformations_1.png")
 
 mod1 <- lm(y ~ ns(x, 1), data = sim5)
 mod2 <- lm(y ~ ns(x, 2), data = sim5)
@@ -28,5 +25,3 @@ ggplot(sim5, aes(x, y)) +
   geom_point() +
   geom_line(data = grid, colour = "red") +
   facet_wrap(~ model)
-
-ggsave("model/figs/transformations_2.png")

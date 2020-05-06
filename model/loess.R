@@ -1,5 +1,4 @@
 library(tidyverse)
-
 library(modelr)
 options(na.action = na.warn)
 
@@ -21,17 +20,11 @@ plot_sim1_loess <-
   geom_line(aes(x = x, y = pred), data = grid_loess, colour = "red")
 plot_sim1_loess
 
-ggsave("model/figs/loess.png")
-
 #geom_smooth() uses loess() by default:
 plot_sim1_loess +
   geom_smooth(method = "loess", colour = "blue", se = FALSE, alpha = 0.20)
-
-ggsave("model/figs/smooth.png")
 
 ggplot(sim1, aes(x = x)) +
   geom_ref_line(h = 0) +
   geom_point(aes(y = resid)) +
   geom_point(aes(y = resid_loess), colour = "red")
-
-ggsave("model/figs/loess_vs_lm_resid.png")

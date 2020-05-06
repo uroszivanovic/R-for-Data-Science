@@ -1,5 +1,4 @@
 library(tidyverse)
-
 library(modelr)
 options(na.action = na.warn)
 
@@ -18,16 +17,10 @@ ggplot(grid, aes(x1, x2)) +
   geom_tile(aes(fill = pred)) + 
   facet_wrap(~ model)
 
-ggsave("model/figs/interactions_2.1.png")
-
 ggplot(grid, aes(x1, pred, colour = x2, group = x2)) + 
   geom_line() +
   facet_wrap(~ model)
 
-ggsave("model/figs/interactions_2.2.png")
-
 ggplot(grid, aes(x2, pred, colour = x1, group = x1)) + 
   geom_line() +
   facet_wrap(~ model)
-
-ggsave("model/figs/interactions_2.3.png")
